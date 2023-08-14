@@ -1,19 +1,20 @@
 import express from "express";
+import bodyParser from "body-parser";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
-import bodyParser from "body-parser";
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
-
-
 const app = express();
 const port = 3000;
 
+// Middleware pour analyser les données encodées en URL et de les convertir en object en javascript
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// requête pour envoyer le fichier index.html 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
-// Middleware pour analyser les données encodées en URL et de les convertir en object en javascript
-app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post("/submit", (req, res) =>{
   console.log(req.body)
