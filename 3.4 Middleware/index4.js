@@ -11,7 +11,7 @@ import { fileURLToPath } from "url";
 
   *import.meta.url renvoie l'URL du module en cours d'exécution.
   *fileURLToPath(import.meta.url) convertit cette URL en un chemin de fichier local.
-  *dirname(fileURLToPath(import.meta.url)) renvoie le nom du répertoire de ce chemin de fichier
+  *-dirname(fileURLToPath(import.meta.url)) renvoie le nom du répertoire de ce chemin de fichier
 */
 const __dirname = dirname(fileURLToPath(import.meta.url)); 
 

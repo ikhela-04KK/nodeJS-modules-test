@@ -25,7 +25,7 @@ app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
 /*
-- urlencoded({extended: true }) Il analyse les requêtes entrantes avec des charges utiles encodées en URL et est basé sur un analyseur de corps
+-- urlencoded({extended: true }) Il analyse les requêtes entrantes avec des charges utiles encodées en URL et est basé sur un analyseur de corps
 - utilisation de body parser pour transmettre les data qui nous parviennent via biais des formulaires de notre site
 -urlencoded({extended: true}) permet à Express d'analyser les données encodées en URL et de les convertir en un objet JavaScript, en prenant en charge des structures de données plus complexes si extended est défini sur true.
 */

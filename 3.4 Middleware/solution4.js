@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 function bandNameGenerator(req, res, next) {
   console.log(req.body);
   bandName = req.body["street"] + req.body["pet"];  // on peut aussi faire req.body.street et req.body.pet
-  next();// permet de liberer la ressource afin de soit passer à un autre middleware
+  next();//- permet de liberer la ressource afin de soit passer à un autre middleware
 }
 
 app.use(bandNameGenerator);
