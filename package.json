@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "inquirer": "^9.2.10",
+    "nodemon": "^3.0.1",
     "qr-image": "^3.2.0",
     "sillyname": "^0.1.0",
     "superheroes": "^3.0.0"
