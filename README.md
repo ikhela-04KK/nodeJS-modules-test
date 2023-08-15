@@ -6,7 +6,7 @@
 
 # npm init recherche toujours le fichier main.js , il faut toujours s'attendre à créer un fichier portant ce nom 
 
-
+<!-- tips: trouver ces propres analogies pour bien comprendre les choses  -->
 
 #3.5 Secret Project
 
