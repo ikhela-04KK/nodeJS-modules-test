@@ -36,7 +36,7 @@ section h1{
     /* width: 307px; */
 }
 
-.btn-app{ 
+form .btn-app{ 
     /* background: linear-gradient(180deg, #85AFEE, #85AFEE);  */
     border-radius: 15px;
     background: linear-gradient(180deg, #85AFEE 0%, #85AFEE 100%);

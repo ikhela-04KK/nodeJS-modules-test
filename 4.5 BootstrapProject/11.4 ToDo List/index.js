@@ -14,7 +14,7 @@ app.get("/", (req,res) =>{
     res.render("index.ejs");
 })
 
-app.post("/features.ejs", (req, res) =>{
+app.post("/submit", (req, res) =>{
     res.render("features.ejs")
 });
 app.listen(port, () => {
