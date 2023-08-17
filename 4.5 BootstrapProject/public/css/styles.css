@@ -1,0 +1,230 @@
+#title{
+  background-color: #ff4c68;
+  color:#fff;/*pour eviter de repeter à chaque fois les mêmes éléments*/
+}
+h1{
+  font-family:"Montserrat-Black";
+  font-size:3rem;
+  line-height:1.5;
+} 
+/* h3{
+      on pouvait déjà chngé les éléments directement ici
+ * }*/
+/* pour ajouter des marges à droite et à gauche */
+
+.container-fluid{
+  padding: 3% 15% 7%;
+}
+
+.navbar{
+  padding:0 0 4.5rem;
+  /*font-weight:bold j'ai déjà mis ça directement dans le navabr-brand*/ 
+}
+
+  /*mettre un un font family ubuntu à notre titre de page */
+.navbar-brand{
+  font-family:"Ubuntu";
+  font-size:3.5rem;
+}
+
+
+  /*juste pou eviter la repetition de pb */
+.nav-item{
+  padding:0 18px;
+  font-family:"Montserrat-light"
+}
+.nav-link{
+  font-size:1.2rem;
+}
+.download-button{
+  margin:5% 3% 5% 0;
+}
+/*fin bar de navigation*/
+
+/* title-image */
+.title-image{
+  transform: rotate(25deg);
+  /*pour le positiond de l'image sur une autre */
+  width: 24%;
+  position: absolute;
+  top: 139px;
+  right: 232px;
+}
+
+/* modificaiton du features */
+#features{
+  /*pour la modification des éléments du features*/
+  background-color: #fff;
+  position: relative;
+}
+
+#features h3{
+  /* width: 100%; */
+}
+.grp-features{
+  text-align:center;
+  padding:4rem 2rem 2rem 0;
+  margin-bottom:3rem;
+}
+.grp-features h3{
+  width: 100%;
+  font-size:1.5rem;
+  font-family:"Montserrat-Black";
+  font-weight:bold;
+}
+.grp-features p{
+  color:#9c9c9c;
+}
+.fas{
+  color:#ef8172;
+  width: 100%;
+  font-size: 3rem;
+  padding: 0px 0 26px 0;
+}
+.fas:hover{
+  color:#ff4c68;
+  cursor:pointer;
+}
+
+/*exercice que j'ai faire à ma mnière */
+/* fa-4x pour agrandir l'icône */
+/*correction de l'exercice 
+  #features{
+    padding:7% 15%;
+ }
+ .features-box{
+    text-align:center;
+    padding:4.5%;
+ }
+*/
+
+/*for center container */
+/* .grp-features-2{ */
+/*   background-color: #ff5764; */
+/*   color:#fff; */
+/*   font-family:"Montserrat-Black"; */
+/* } */
+
+/*testimonials*/
+/* #testimonials{ */
+/*   padding-top: 30px; */
+/*   margin-bottom:120px; */
+/*   display: flex; */
+/*   justify-content:center; */
+/*   align-items:center; */
+/* } */
+/**/
+/*grp-testimonials*/
+/* .testimonial-text{ */
+/*   font-size:2.5rem; */
+/*   line-height:4rem; */
+/*   font-weight:bold; */
+/*   text-align:center; */
+/*   padding:16px 85px; */
+/* } */
+
+
+/*grp-testimonials for center images*/
+/* .grp-testimonials{ */
+/*   text-align:center; */
+/* } */
+/**/
+/*taille des images testimonial-image*/
+/* .testimonial-image{ */
+/*   width:8%; */
+/* } */
+
+/*for press section*/
+/* #press{ */
+/*   display: flex; */
+/*   justify-content:space-around; */
+/*   align-items:center; */
+/* } */
+/* #press img{ */
+/*   width:18%; */
+/* } */
+
+#testimonials{
+  padding:7% 15%;
+  text-align:center;
+  background-color:#ef8172;
+  color:#fff;
+}
+#testimonials h2{
+  font-family:"Montserrat-Black";
+  /* font-size:3rem;  */
+  /* line-height:1.5; */
+}
+.testimonial-image{
+  width:10%;
+  border-radius:100%;
+  margin:20px;/* permet de mettre de la marge entre les éléments */
+}
+.carousel-item{
+  padding:7% 15%;
+}
+#press{
+  background-color:#ef8172;
+  text-align:center;
+  padding-bottom:3%;
+}
+.press-img{
+  width:15%;
+  margin:20px 20px 80px;
+}
+
+/* Pricing class */
+#pricing{
+  padding:100px;
+  text-align:center;
+}
+.pricing-column{
+  padding:3% 2%;
+}
+
+/*a utilser si notre site est proche est prêt à être imprimer , il faut faire de telle sorte que je puisses avoir de bonne note , tu y arriver de telle sorte 
+  -- @media(min-width:300px) and (max-width:400px){
+  ** ce qui signifie qu'il sera entre les deux la modifications se fera entre les deux 
+
+
+  } 
+
+à pouvoir */
+/*mettre en place le cta*/
+
+#cta{
+  font-family:"Montserrat-Black";
+  text-align:center;
+  background-color:#ff4c68;
+  padding:7% 15%;
+}
+#cta h3{
+  /* padding:3% 15%; */
+  color:#fff;
+  font-size:3.5rem;
+  line-height:1.5;
+}
+
+/*le footer*/
+#footer{
+  padding:7% 15%;
+  background-color:#fff;
+  text-align:center;
+}
+#footer i{
+  margin:3% 1%;
+}
+
+@media(max-width:1013px){
+  #title{
+    text-align:center;
+  }
+  .title-image{
+    position:static;
+    transform:rotate(0);
+    width:50%;
+  }
+}
+
+
+
