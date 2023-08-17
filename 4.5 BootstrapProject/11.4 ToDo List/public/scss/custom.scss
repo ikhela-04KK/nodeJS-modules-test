@@ -1,0 +1,15 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+
+
+// Include any default variable overrides here (though functions won't be available)
+// $body-bg:#EAF0F9;
+$body-font-family: 'Space Grotesk', sans-serif;
+
+
+
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+// @import "../../node_modules/bootstrap/scss/bootstrap/mixins";
+
+// Then add additional custom code heredze
