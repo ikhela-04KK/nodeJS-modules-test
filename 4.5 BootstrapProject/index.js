@@ -34,9 +34,13 @@
 
 
 import express from "express";
+import {TreeWalker} from "tree-file";
+
 
 const app = express();
 const port = 3000;
+
+// TreeWalker("C:/Users/Administrateur/Documents/nodeJS-modules-test/4.5 BootstrapProject");
 
 app.use(express.static("public"));
 
