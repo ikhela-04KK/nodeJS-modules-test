@@ -1,0 +1,22 @@
+
+
+.colls{
+    left: 10px;
+    position: absolute;
+    padding: 17px 9px 15px 8px;
+    text-align: center;
+    margin-left: 20px !important;
+    width: 83px;
+    height: 55px;
+    border-radius: 12px;
+    border: 2px solid #DFDCED;
+    background: #FFF;
+    display: flex;
+    /* ! don't make a center element for my all svg, i don't know how do that  */
+}
+.colls svg {
+    margin-bottom: 3px;
+}
+.colls:hover{
+    cursor: pointer;
+}
