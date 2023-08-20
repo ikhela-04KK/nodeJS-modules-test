@@ -20,3 +20,7 @@
               <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
             </form> -->
             <!-- end search control ul for customer -->
+
+            <!-- * -->
+            la propriété css flex-shrink permet de determiner à quelle point un élément peut rétrécir lorsque l'espace disponible est limité 
+            ici elle est flex-shrink-0 , veut dire que notre élément ne reduira cas la limite de sa taille intrinsèque 

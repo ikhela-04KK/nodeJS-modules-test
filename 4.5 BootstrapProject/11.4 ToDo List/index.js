@@ -15,8 +15,10 @@ app.get("/", (req,res) =>{
 })
 
 app.post("/submit", (req, res) =>{
-    res.render("features.ejs")
+    res.render("sign-up.ejs")
 });
+
+// app.post("/submit/")
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
