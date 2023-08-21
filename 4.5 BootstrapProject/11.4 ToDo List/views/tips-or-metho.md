@@ -24,3 +24,6 @@
             <!-- * -->
             la propriété css flex-shrink permet de determiner à quelle point un élément peut rétrécir lorsque l'espace disponible est limité 
             ici elle est flex-shrink-0 , veut dire que notre élément ne reduira cas la limite de sa taille intrinsèque 
+
+            <!-- * conseille sur display: flex -->
+            En ajoutant la propriété d-flex , cela permet d'empêcher les éléments de s'etirer tout le long de l'axe principal , ils pourront se retrercir si necessaire 
