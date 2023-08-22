@@ -873,7 +873,7 @@ progress {
 
 .col-6 {
   flex: 0 0 auto;
-  width: 50%;
+  /* width: 50%; */
 }
 
 .col-7 {
@@ -2391,7 +2391,7 @@ textarea.form-control-lg {
 .form-check-input:disabled {
   pointer-events: none;
   filter: none;
-  opacity: 0.5;
+  /* opacity: 0.5; */
 }
 .form-check-input[disabled] ~ .form-check-label, .form-check-input:disabled ~ .form-check-label {
   cursor: default;

@@ -1,44 +1,65 @@
 import express from "express";
-// import {TreeWalker} from "tree-file";
-// import bodyParser from "body-parser";
 import multer from "multer"
 
-
+// const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const upload = multer();
 const port = 3000;
 
+// const newTasks = [];
 // TreeWalker("C:/Users/Administrateur/Documents/nodeJS-modules-test/4.5 BootstrapProject");
 // app.use(bodyParser.urlencoded({extended : true})); 
+// app.use(express.static(__dirname +'/dist'), {index:false}); 
 app.use(express.static("public"));
+app.use('/sign-in', express.static('public'));
 
-// j'initialise le middleware afin de recuperer les informations sur le post 
-// app.use(bodyParser.json())
-
-
-
+// j'initialise le middleware afin de recuperer les 
 app.get("/", (req,res) =>{
-    // console.log(req.body);
     res.render("index.ejs");
 })
 
 app.post("/sign-in", (req, res) =>{
-    // console.log(req.body);
     res.render("sign-up.ejs")
 });
 
+let userData = {};
+
 // Renvoyer le nom de fichier directement à features.ejs
+app.post("/sign-in/connected", upload.single('userImage'), (req, res) => {
 
-
-app.post("/connected", upload.single('userImage'), (req,res,next) =>{
-    console.log(req.file.originalname);
-    console.log(req.body);
+    const email = req.body.email;
+    const nameUser = email.split("@")[0];
     const userImage = req.file.originalname;
-    const data ={
+    userData = {
         userImage: `images/${userImage}`,
+        nameUser: nameUser,
     };
-    res.render("features.ejs",data);
+    res.render("features.ejs", userData);
 });
+
+
+// renvoie la tâche que l'utilisateur à ajouter
+// Route pour ajouter une tâche à l'utilisateur connecté
+app.post("/sign-in/connected/add-task",upload.none(), (req, res) => {
+    console.log(req.body);
+
+    // display hour 
+    const date = new Date(); 
+    const heureDate = `${date.getHours()}:${date.getMinutes()}`
+    userData.heureDate = heureDate;
+
+    // for stask 
+    const taskUser = req.body.taskUser;
+    userData.taskUser = taskUser;
+
+    res.redirect("/sign-in/connected");
+});
+
+
+app.get("/sign-in/connected", (req, res) => {
+    res.render("features.ejs", userData);
+});
+
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);

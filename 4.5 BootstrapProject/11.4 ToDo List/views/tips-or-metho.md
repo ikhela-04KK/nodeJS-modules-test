@@ -27,3 +27,6 @@
 
             <!-- * conseille sur display: flex -->
             En ajoutant la propriété d-flex , cela permet d'empêcher les éléments de s'etirer tout le long de l'axe principal , ils pourront se retrercir si necessaire 
+
+            <!-- * -->
+            app.use('/sign-in', express.static('public')); , j'ai utilisé cette méthode pour monter mon fichier public sur /sign-in/connected. 
