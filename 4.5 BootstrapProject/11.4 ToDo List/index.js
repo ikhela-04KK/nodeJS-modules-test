@@ -23,6 +23,7 @@ app.post("/sign-in", (req, res) =>{
 });
 
 let userData = {};
+let allTaskUser = [];
 
 // Renvoyer le nom de fichier directement à features.ejs
 app.post("/sign-in/connected", upload.single('userImage'), (req, res) => {
@@ -30,6 +31,7 @@ app.post("/sign-in/connected", upload.single('userImage'), (req, res) => {
     const email = req.body.email;
     const nameUser = email.split("@")[0];
     const userImage = req.file.originalname;
+    console.log(userImage)
     userData = {
         userImage: `images/${userImage}`,
         nameUser: nameUser,
@@ -50,9 +52,15 @@ app.post("/sign-in/connected/add-task",upload.none(), (req, res) => {
 
     // for stask 
     const taskUser = req.body.taskUser;
-    userData.taskUser = taskUser;
+    allTaskUser.push(taskUser)
+    console.log(allTaskUser);
 
+    // oldTaskUser = 
+    userData.taskUsers = allTaskUser;
+
+    //  est ce que je peux faire userData.taskUser = 
     res.redirect("/sign-in/connected");
+
 });
 
 
@@ -60,12 +68,6 @@ app.get("/sign-in/connected", (req, res) => {
     res.render("features.ejs", userData);
 });
 
-
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
-
-
-
-
-

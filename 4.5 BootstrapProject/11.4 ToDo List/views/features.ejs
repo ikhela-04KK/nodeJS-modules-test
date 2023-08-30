@@ -40,8 +40,8 @@
         <div class="flex-shrink-0 dropdown d-flex justify-content-end">
           <a href="#" class="user-dropdown d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 
-            <!-- application du generateur d'image  -->
-            <img src=<%=userImage%> alt="mdo" width="32" height="32" class="rounded-circle">
+            <!-- application du telechargeur  d'image  -->
+            <img alt="mdo" width="32" height="32" class="rounded-circle" src=<%=userImage%>
 
           </a>
 
@@ -115,7 +115,7 @@
       <!-- for inclunding part for add task  -->
       <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
         <div class="list-group">
-          <label class="list-group-item d-flex gap-3">
+          <!--# <label class="list-group-item d-flex gap-3">
             <input class="form-check-input flex-shrink-0" type="checkbox" value="" checked="" style="font-size: 1.375em;">
             <span class="pt-1 form-checked-content">
               <strong>Finish sales report</strong>
@@ -144,26 +144,38 @@
                 Tomorrow
               </small>
             </span>
-          </label>
-
+          </label> -->
 
           <!-- Ajouter la tâche ici grâce à ejs  -->
-          <% if (locals.taskUser){%>
-            <label class="list-group-item d-flex gap-3">
-            <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.375em;">
-            <span class="pt-1 form-checked-content">
-              <strong> <%=taskUser%> </strong>
-              <small class="d-block text-body-secondary">
-                <svg class="bi me-1" width="1em" height="1em"><use xlink:href="#alarm"></use></svg>
-                <%= heureDate %>pm
-              </small>
-            </span>
-          </label>
+          <!-- *Ajouter une liste deroulante pour nos éléments afin de pouvoir derouler sur plusieurs liste à la fois -->
+
+          <!--#
+            <% if (locals.taskUser.length){
+              <% for (taskUser of taskUser ){
+
+              }
+            }
+          
+          
+          -->
+
+          
+           <%if(locals.taskUsers.length){%>
+            <%for(let i=0;i<taskUsers.length;i++){%>
+              <label class="list-group-item d-flex gap-3">
+                <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.375em;">
+                <span class="pt-1 form-checked-content">
+                  <strong><%= taskUsers[i] %></strong>
+                  <small class="d-block text-body-secondary">
+                    <svg class="bi me-1" width="1em" height="1em"><use xlink:href="#alarm"></use></svg>
+                    <%= heureDate %>pm
+                  </small>
+                </span>
+              </label>
+            <%}%>
           <%}%>
 
-        
-
-
+      
 
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Add your task
