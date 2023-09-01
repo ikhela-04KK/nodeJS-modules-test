@@ -16,6 +16,9 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage:storage});
 const port = 3000;
+const taskUsers= [];
+
+
 
 
 // const newTasks = [];
@@ -44,9 +47,12 @@ app.post("/sign-in/connected", upload.single('userImage'), (req, res) => {
     const email = req.body.email;
     const nameUser = email.split("@")[0];
     const userImage = req.file.filename;
+    let lenTask = 0;
+
     userData = {
         userImage: `images/${userImage}`,
         nameUser: nameUser,
+        lenTask: lenTask,
     };
     res.render("features.ejs", userData);
 });
@@ -63,18 +69,31 @@ app.post("/sign-in/connected/add-task",upload.none(), (req, res) => {
     userData.heureDate = heureDate;
 
     // for stask 
+    
     const taskUser = req.body.taskUser;
-    userData.taskUser = taskUser;
+    let lenTask = taskUsers.push(taskUser);
+    userData.taskUsers = taskUsers;
+    userData.lenTask = lenTask;
+
+    // the task 
+//     const taskHtml = ` <label class="list-group-item d-flex gap-3">
+//     <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.375em;">
+//     <span class="pt-1 form-checked-content">
+//       <strong> ${taskUser} </strong>
+//       <small class="d-block text-body-secondary">
+//         <svg class="bi me-1" width="1em" height="1em"><use xlink:href="#alarm"></use></svg>
+//         ${heureDate}pm
+//       </small>
+//     </span>
+//   </label>`;
+//   userData.taskHtml = taskHtml;
 
     res.redirect("/sign-in/connected");
 });
-
-
 app.get("/sign-in/connected", (req, res) => {
+
     res.render("features.ejs", userData);
 });
-
-
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
