@@ -13,7 +13,6 @@ const storage = multer.diskStorage({
     }
 })
 
-
 const upload = multer({storage:storage});
 const port = 3000;
 const taskUsers= [];
@@ -97,8 +96,3 @@ app.get("/sign-in/connected", (req, res) => {
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
-
-
-
-
-
