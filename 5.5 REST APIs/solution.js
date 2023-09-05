@@ -3,21 +3,18 @@ import axios from "axios";
 import bodyParser from "body-parser";
 
 const app = express();
-const port = 3000;
+const port = 3001;
 const API_URL = "https://secrets-api.appbrewery.com";
 
 //Add your own bearer token from the previous lesson.
-const yourBearerToken = "08f3026d-9c6c-4d88-a3b2-c579dc106247";
+const yourBearerToken = "3fb5217e-a0df-40f1-bede-8f477a8c15f8";
 const config = {
   headers: { Authorization: `Bearer ${yourBearerToken}` },
 };
-
 app.use(bodyParser.urlencoded({ extended: true }));
-
 app.get("/", (req, res) => {
   res.render("index.ejs", { content: "Waiting for data..." });
 });
-
 app.post("/get-secret", async (req, res) => {
   const searchId = req.body.id;
   try {
@@ -27,7 +24,6 @@ app.post("/get-secret", async (req, res) => {
     res.render("index.ejs", { content: JSON.stringify(error.response.data) });
   }
 });
-
 app.post("/post-secret", async (req, res) => {
   try {
     const result = await axios.post(API_URL + "/secrets", req.body, config);
@@ -36,7 +32,6 @@ app.post("/post-secret", async (req, res) => {
     res.render("index.ejs", { content: JSON.stringify(error.response.data) });
   }
 });
-
 app.post("/put-secret", async (req, res) => {
   const searchId = req.body.id;
   try {
@@ -50,7 +45,6 @@ app.post("/put-secret", async (req, res) => {
     res.render("index.ejs", { content: JSON.stringify(error.response.data) });
   }
 });
-
 app.post("/patch-secret", async (req, res) => {
   const searchId = req.body.id;
   try {
@@ -64,7 +58,6 @@ app.post("/patch-secret", async (req, res) => {
     res.render("index.ejs", { content: JSON.stringify(error.response.data) });
   }
 });
-
 app.post("/delete-secret", async (req, res) => {
   const searchId = req.body.id;
   try {
@@ -74,7 +67,6 @@ app.post("/delete-secret", async (req, res) => {
     res.render("index.ejs", { content: JSON.stringify(error.response.data) });
   }
 });
-
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

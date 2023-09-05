@@ -22,7 +22,8 @@ app.get("/noAuth", async (req, res) => {
   
   const config = {
     method :'get',
-    url :`${API_URL}random`,
+    url :'random',
+    baseURL:API_URL
     // headers: {'Authorization': `Bearer ${yourBearerToken}`}
   }
   // let content;
@@ -53,11 +54,15 @@ app.get("/basicAuth",async (req, res) => {
   */
     const config = {
       method :'get',
-      url :`${API_URL}all?page=2`,
+      url :'all',
+      baseURL:API_URL,
+      param:{
+        page:2
+      },
       auth:{
         username:yourUsername,
         password:yourPassword
-      }
+      },
       // headers: {'Authorization': `Bearer ${yourBearerToken}`}
     }
     // let content;
@@ -78,7 +83,12 @@ app.get("/apiKey",async (req, res) => {
   //HINT: You need to provide a query parameter of apiKey in the request.
   const config = {
     method:'get',
-    url: `${API_URL}filter?score=5&apiKey=${yourAPIKey}`
+    url: 'filter',
+    baseURL:API_URL,
+    params:{
+      score:5,
+      apiKey:yourAPIKey,
+    }
   }
   try{
     const response = await axios(config);
@@ -106,14 +116,15 @@ app.get("/bearerToken", async (req, res) => {
   */
   const config = {
     method:'get',
-    url: `${API_URL}secrets/42`,
+    url: 'secrets/42',
+    baseURL:API_URL,
     headers: { 
       Authorization: `Bearer ${yourBearerToken}` 
     },
   }
   try{
     const response = await axios(config);
-    const content = JSON.stringify(response.data);
+    const content = JSON.stringify(response.data); //convert javascript objec to json for seeing that in a div of index.ejs
     res.render("index.ejs",{content:content});
   }
   catch(error){
