@@ -1,17 +1,19 @@
 import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
+import cors from "cors"
 
 const app = express();
 const port = 3001;
 const API_URL = "https://secrets-api.appbrewery.com";
 
 //Add your own bearer token from the previous lesson.
-const yourBearerToken = "3fb5217e-a0df-40f1-bede-8f477a8c15f8";
+const yourBearerToken = "a04e5cf8-ffa5-4d92-9573-0f3cc21be63e";
 const config = {
   headers: { Authorization: `Bearer ${yourBearerToken}` },
 };
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors())
 app.get("/", (req, res) => {
   res.render("index.ejs", { content: "Waiting for data..." });
 });
