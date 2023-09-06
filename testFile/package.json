@@ -1,0 +1,21 @@
+{
+  "name": "ikhela",
+  "version": "1.0.0",
+  "description": "i'll be the best ",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "marc",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "inquirer": "^9.2.10",
+    "nodemon": "^3.0.1",
+    "qr-image": "^3.2.0",
+    "sillyname": "^0.1.0",
+    "superheroes": "^3.0.0"
+  }
+}
