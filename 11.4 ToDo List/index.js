@@ -11,7 +11,7 @@ const storage = multer.diskStorage({
     filename: function(req,file,cb){
         cb(null, Date.now() + path.extname(file.originalname));
     }
-})
++})
 
 const upload = multer({storage:storage});
 const port = 3000;
@@ -46,14 +46,9 @@ app.post("/sign-in/connected", upload.single('userImage'), (req, res) => {
     // console.log(upload);
     const email = req.body.email;
     const nameUser = email.split("@")[0];
-<<<<<<< HEAD:4.5 BootstrapProject/11.4 ToDo List/index.js
-    const userImage = req.file.originalname;
-    console.log(userImage)
-=======
     const userImage = req.file.filename;
     let lenTask = 0;
 
->>>>>>> 11.4-ToDoList:11.4 ToDo List/index.js
     userData = {
         userImage: `images/${userImage}`,
         nameUser: nameUser,
@@ -65,7 +60,7 @@ app.post("/sign-in/connected", upload.single('userImage'), (req, res) => {
 
 // renvoie la tâche que l'utilisateur à ajouter
 // Route pour ajouter une tâche à l'utilisateur connecté
-app.post("/sign-in/connected/add-task",upload.none(), (req, res) => {
+app.post("/sign-in/connected/add-task",upload.none(), (req,res,next) => {
     console.log(req.body);
 
     // display hour 
@@ -76,10 +71,6 @@ app.post("/sign-in/connected/add-task",upload.none(), (req, res) => {
     // for stask 
     
     const taskUser = req.body.taskUser;
-<<<<<<< HEAD:4.5 BootstrapProject/11.4 ToDo List/index.js
-    allTaskUser.push(taskUser)
-    console.log(allTaskUser);
-=======
     let lenTask = taskUsers.push(taskUser);
     userData.taskUsers = taskUsers;
     userData.lenTask = lenTask;
@@ -96,7 +87,6 @@ app.post("/sign-in/connected/add-task",upload.none(), (req, res) => {
 //     </span>
 //   </label>`;
 //   userData.taskHtml = taskHtml;
->>>>>>> 11.4-ToDoList:11.4 ToDo List/index.js
 
     // oldTaskUser = 
     userData.taskUsers = allTaskUser;
@@ -106,13 +96,8 @@ app.post("/sign-in/connected/add-task",upload.none(), (req, res) => {
 
 });
 app.get("/sign-in/connected", (req, res) => {
-
     res.render("features.ejs", userData);
 });
-<<<<<<< HEAD:4.5 BootstrapProject/11.4 ToDo List/index.js
-
-=======
->>>>>>> 11.4-ToDoList:11.4 ToDo List/index.js
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
