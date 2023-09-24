@@ -26,17 +26,17 @@ async function listCollections(client) {
 }
 
 // our function to create a new listing 
-async function createListing(client, newListing) {
-    const result = await client.db("sample_airbnb").collection("listingsAndReviews").insertOne(newListing);
-    console.log(`New listing created with the following id: ${result.insertedId}`)
-}
+// async function createListing(client, newListing) {
+//     const result = await client.db("sample_airbnb").collection("listingsAndReviews").insertOne(newListing);
+//     console.log(`New listing created with the following id: ${result.insertedId}`)
+// }
 
 // our function to create many listings
 async function createManyListings(client, newListings){
     const result = await client.db("sample_airbnb").collection("listingsAndReviews").insertMany(newListings)
 
     console.log(`${result.insertedCount}  news listings created successfully`);
-    console.log(`${result.insertedIds} id(s) of new listing `);
+    console.log(result.insertedIds);
 }
 
 async function run() {

@@ -1,0 +1,49 @@
+// math.test.js
+const { add, subtract } = require('./math');
+
+// Utilisation de beforeAll pour configurer des données communes pour les tests
+let result;
+
+beforeAll(() => {
+  console.log('Mise en place des données communes avant les tests.');
+  result = add(2, 3);
+});
+
+// Utilisation de jest.fn() pour créer un mock d'une fonction
+const mockAdd = jest.fn();
+
+// Utilisation de jest.spyOn() pour espionner une fonction réelle
+const spySubtract = jest.spyOn(Math, 'subtract');
+
+// Exemple de test
+test('L\'addition fonctionne correctement', () => {
+  expect(result).toBe(5);
+});
+
+test('Le mock de l\'addition fonctionne', () => {
+  mockAdd(2, 3);
+  expect(mockAdd).toHaveBeenCalledWith(2, 3);
+});
+
+test('L\'espionnage de la soustraction fonctionne', () => {
+  subtract(5, 2);
+  expect(spySubtract).toHaveBeenCalledWith(5, 2);
+});
+
+// Test d'instantané (snapshot)
+test('Le module math a un instantané valide', () => {
+  expect(add).toMatchSnapshot();
+});
+
+// Test d'exécution en parallèle (parallel)
+test('Test 1', () => {
+  expect(true).toBe(true);
+});
+
+test('Test 2', () => {
+  expect(false).toBe(false);
+});
+
+test('Test 3', () => {
+  expect(42).toBe(42);
+});
