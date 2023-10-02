@@ -11,31 +11,31 @@
       <li><p id="message">Messages</p></li>
     </ul>
 
-    <script>
-      const ably = new Ably.Realtime.Promise({
-        authUrl: "/auth",
-      });
+    <script src="dist/index.js">
+      // const ably = new Ably.Realtime.Promise({
+      //   authUrl: "/auth",
+      // });
 
-      const ablyRealtimePromiseExample = async () => {
-        // Connect to Ably
-        await ably.connection.once("connected");
-        document.getElementById("status").innerHTML = "Connected to Ably!";
+      // const ablyRealtimePromiseExample = async () => {
+      //   // Connect to Ably
+      //   await ably.connection.once("connected");
+      //   document.getElementById("status").innerHTML = "Connected to Ably!";
 
-        // get the channel to subscribe to
-        const channel = ably.channels.get("quickstart");
+      //   // get the channel to subscribe to
+      //   const channel = ably.channels.get("quickstart");
 
-        /* 
-          Subscribe to a channel. 
-          The promise resolves when the channel is attached 
-          (and resolves synchronously if the channel is already attached).
-        */
-        await channel.subscribe("greeting", (message) => {
-          document.getElementById("message").innerHTML = message.data;
-        });
+      //   /* 
+      //     Subscribe to a channel. 
+      //     The promise resolves when the channel is attached 
+      //     (and resolves synchronously if the channel is already attached).
+      //   */
+      //   await channel.subscribe("greeting", (message) => {
+      //     document.getElementById("message").innerHTML = message.data;
+      //   });
 
-        // Publish a message
-        await channel.publish("greeting", "hello");
-      };
+      //   // Publish a message
+      //   await channel.publish("greeting", "hello");
+      // };
 
       ablyRealtimePromiseExample();
     </script>
