@@ -19,7 +19,7 @@ const ablyRealtimePromiseExample = async () => {
     (and resolves synchronously if the channel is already attached).
   */
   await channel.subscribe("greeting", (message) => {
-    console.log("Message is ==> " + message.data);
+    console.log("Message isss ==> " + message.data);
   });
 
   // Publish a message or two

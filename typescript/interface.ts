@@ -30,7 +30,7 @@ interface Admin extends UserIns{
 //     carDate:Date,
 //     cvv:string
 // }
-const hishty :Admin = 
+const hishty:Admin = 
     {
         dbId:7841, 
         email: "hs@gmail.com", 

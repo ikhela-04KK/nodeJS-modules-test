@@ -1,13 +1,12 @@
-import { create } from "domain";
+// import { create } from "domain";
 
 function addTwo(num: number){
     return num +2;
 }
-addTwo(5)
+addTwo(5);
 
-// create  function 
-function signUpUser(name:string, email:string,isPaid:boolean){
-}
+// create function 
+function signUpUser(name:string, email:string,isPaid:boolean){}
 
 // use type in arrrow function 
 let loginUser = (s:string) : string =>{
@@ -18,17 +17,16 @@ heros.map((hero) =>{
     return `it's an ${hero}`  // don't do that return 2
 })
 
-// use never for a function which doesn'r return a function / and a function that stop the program and raise the error 
+// use never for a function which doesn't return a function / and a function that stop the program and raise the error 
 function fail(msg: string): never {
   throw new Error(msg);
 }
 signUpUser('ikhela',"kankoffi36@gmail.com",true);
 
 // create an object with typescript 
-let userName= {
+let userName = {
     name :"nathan", // this way is never accept in ts 
     age: 10, 
-
 }
 
 console.log(userName);

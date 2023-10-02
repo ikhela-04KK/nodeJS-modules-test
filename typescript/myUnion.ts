@@ -44,6 +44,7 @@ type female = {
 }
 
 // Two type for same data
-const sex: male | female ="78";
+const malick:male ={weight:7}
+const sex: male | female =malick ;
 console.log(sex);
-const sex_special :(male | female)[] = ["sdfsf",7887];
+const sex_special :(male | female)[] = [{weight:78},{mensuration:"women"}]; // pour utiliser type dans une autre propriété, il faut assigner des valeurs au contenu du type

@@ -8,10 +8,12 @@ var country :[number, string, boolean] = [225,"ci", true]
 // create a type country
 
 function allCountry():[number,string,boolean][]{
-    return [[225, "Senegal",false],
-            [1, "canada",false],
-            [225, "Côte d'ivoire",true],]
-            // [225, "Côte d'ivoire",true]] you can specified more than three value
+    return [
+                [225, "Côte d'ivoire",true], // ici, je peux spécifier plus d'un tableau 
+                [225, "Senegal",false],
+                [1, "canada",false],
+                
+           ]
 }
 
 let [ci, sn, ca] = allCountry() //there are succes using destructuring element 
@@ -20,10 +22,10 @@ console.log(ci);
 // 
 function allCountries(): [string[], string[], string[]] {
     return [
-        ["Côte d'Ivoire", "Senegal", "Canada"],
+        ["Côte d'Ivoire", "Senegal", "Canada"], // 
         ["Abidjan", "Dakar", "Ottawa"],
-        ["Yamoussoukro", "Thiès", "Toronto"]
-        // ["Yamoussoukro", "Thiès", "Toronto"] not more than tree value
+        ["Yamoussoukro", "Thiès", "Toronto"],
+        // ["Yamoussoukro", "Thiès", "Toronto"] not more than tree value but i can specify more than one value in array 
     ];
 }
 
