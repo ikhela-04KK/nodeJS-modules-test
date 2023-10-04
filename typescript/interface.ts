@@ -9,6 +9,34 @@ interface cardDetails {
     cvv :number 
 }
 
+interface Wallet{
+    name_cand:string,
+    num_cand:string,
+    locally:string | number,
+}
+
+class walletCredit implements Wallet{
+    constructor(
+        public name_cand:string,
+        public num_cand:string, locally:string | number,
+        public lieu:string,
+        public dat_env:Date,
+    ){}
+}
+
+// implements with class and interfacpermet de déclaré que la classe respecte un contrat spécifié pour une interface 
+class aInfoCredit implements cardDetails,Wallet{
+     constructor(
+        protected cardNumber :string,
+        protected cardDat : Date,
+        protected cvv :number, 
+        public name_cand:string,
+        public num_cand:string, locally:string | number,
+        public lieu:string,
+        public dat_env:Date,
+    ){}
+}
+
 interface UserIns { // il identife la similiarité avec les variable qui sont dans un autre fichier 
     readonly dbId:number, 
     email:string,  

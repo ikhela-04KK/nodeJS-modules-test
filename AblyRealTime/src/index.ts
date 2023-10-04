@@ -45,12 +45,13 @@ const city = "Bonoua"
 class Users {
   // email:string  // if we don't have property email:string , error does not exist property email is raised
   // name:string  supprimer pour que les variables instancier dans le construteur fonctionne
+
   readonly city:string =city // à partir de la 3eme valeur , il faut specifier la valeur du type
   
-  constructor (public email: string, private name: string){  // mettre toujours les types des constructors ..  même si ils ont été déclaré plus haut 
+  constructor (public email: string, private name: string) {  // mettre toujours les types des constructors ..  même si ils ont été déclaré plus haut 
     this.email = email
-    this.name = name // pas besoin d'instancier avec les this vu qu'il fait le job avec le public/private, this est utilisé pour accéder au propriété actuelle de la class ou de l'instance
-    -
+    this.name = name, // pas besoin d'instancier avec les this vu qu'il fait le job avec le public/private, this est utilisé pour accéder au propriété actuelle de la class ou de l'instance
+    
   }
 }
 
@@ -59,5 +60,6 @@ const hish = new Users("h@gmail.com","hisht")
 // hish.city = "ikeha"  city est sous forme de readonly
 console.log(hish.email = "ik@gmail.com")
 // console.log(hish.name = "ieo")  // property name is private
-
 // console.log(hish.city = "788e"); it's a readonly
+
+
