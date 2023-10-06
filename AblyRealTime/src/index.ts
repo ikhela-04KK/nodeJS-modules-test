@@ -48,9 +48,9 @@ class Users {
 
   readonly city:string =city // à partir de la 3eme valeur , il faut specifier la valeur du type
   
-  constructor (public email: string, private name: string) {  // mettre toujours les types des constructors ..  même si ils ont été déclaré plus haut 
+  constructor (public email: string, private _name: string) {  // mettre toujours les types des constructors ..  même si ils ont été déclaré plus haut 
     this.email = email
-    this.name = name, // pas besoin d'instancier avec les this vu qu'il fait le job avec le public/private, this est utilisé pour accéder au propriété actuelle de la class ou de l'instance
+    this._name = _name // pas besoin d'instancier avec les this vu qu'il fait le job avec le public/private, this est utilisé pour accéder au propriété actuelle de la class ou de l'instance
     
   }
 }
