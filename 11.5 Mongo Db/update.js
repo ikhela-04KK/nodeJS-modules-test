@@ -1,6 +1,6 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
 
-const uri = "mongodb+srv://ikhela:ikhela-04KK@test0.s9iyuh2.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://ikhela-04KK:ikhela-04KK@test0.s9iyuh2.mongodb.net/?retryWrites=true&w=majority";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -77,3 +77,4 @@ async function updateT(client){
 }
 // updateT(client)
 
+search(client);
