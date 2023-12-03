@@ -1,0 +1,29 @@
+{
+  "name": "11.7-prisma",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node/dist/src/index.js",
+    "dev": "tsc-watch --onSuccess \"node ./dist/index.js\"",
+    "watch": "npx ts-node index.ts",
+    "build": "tsc",
+    "seed": "ts-node prisma/seed.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.8.3",
+    "prisma": "^5.4.1",
+    "ts-node": "^10.9.1",
+    "tsc-watch": "^6.0.4",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.4.1"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  }
+}
